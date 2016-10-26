@@ -4,10 +4,18 @@
 
 Rise meets Ruby
 
-The Rise Ruby SDK is cross platform library based on Rise (https://rise.vision) and entirely rewritten in Ruby. Check the github wiki for the full documentation.
+The Rise Ruby SDK is cross platform library based on Rise (https://rise.vision) and entirely rewritten in Ruby. Check the github wiki for the full documentation. (https://github.com/RiseVision/Rise-SDK-Ruby/wiki)
 
 #### Third party dependencies
 1. Requests
+
+## Installation instructions
+
+The easiest way to install the Rise Ruby SDK is using gem install.
+
+    gem install risesdk
+
+(https://rubygems.org/gems/risesdk)
 
 ## Public api
 

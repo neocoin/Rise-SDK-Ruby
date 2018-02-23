@@ -26,22 +26,22 @@ class Transactions
         query = addToQuery(query, "orderBy", kwargs[:orderBy])
     end
 
-    return send_request("GET", "/api/transactions" + query)
+    return @helpers.send_request("GET", "/api/transactions" + query)
   end
   def send(secret, amount, recipientId, publicKey, secondSecret=nil)
     options = { "secret" => secret, "amount" => amount, "recipientId" => recipientId, "publicKey" => publicKey}
     unless secondSecret == nil then
       options["secondSecret"] = secondSecret
     end
-    return send_request("PUT", "/api/transactions", options)
+    return @helpers.send_request("PUT", "/api/transactions", data: options)
   end
   def get(id)
-    return send_request("GET", "/api/transactions/get?id=" + id)
+    return @helpers.send_request("GET", "/api/transactions/get?id=" + id)
   end
   def getUnconfirmed(id)
-    return send_request("GET", "/api/transactions/unconfirmed/get?id=" + id)
+    return @helpers.send_request("GET", "/api/transactions/unconfirmed/get?id=" + id)
   end
   def getUnconfirmedList()
-    return send_request("GET", "/api/transactions/unconfirmed")
+    return @helpers.send_request("GET", "/api/transactions/unconfirmed")
   end
 end
